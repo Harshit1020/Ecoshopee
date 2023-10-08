@@ -1,0 +1,29 @@
+
+<%- include('../partials/header'); -%>
+
+
+<div class="mt-3" class="d-flex " class="container">
+    <h1 class="px-5">Mart Page</h1>
+    <hr>
+       <div class="d-flex mt-3 ms-3 gap-5">
+       <% allproducts.forEach(function(pr){ %>
+          <div class="card" style="width: 15rem;">
+            <img style="width: 12rem;" src="/images/uploads/productimages/<%=pr.pic[0] %>"alt="...">
+             <div class="card-body">
+            <h5 class="card-title"><%=pr.name %></h5>
+            <h6 class="text-opacity-25">Sold by : <%=pr.sellerid.name %></h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-warning">whishlist</a>
+              <a href="#" class="btn btn-primary">Add to cart</a>
+            </div>
+          </div>
+      <% }) %>
+    </div>
+</div>
+
+<%- include('../partials/footer'); -%>
+
+
+
+
+   

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Amazon Clone</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+
+    .left{
+      width: 40%;
+      height: 100%;
+      padding: 5vw 3vw;
+      font-family: "Aeonik Pro";
+      /* background-image: url(https://images.unsplash.com/photo-1611325058420-0b771ea180c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fGdyYWRpZW50JTIwYmFja2dyb3VuZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60); */
+      /* background-color: yellow; */
+      /* background-size: cover; */
+      /* background-position: center; */
+    }
+    .right{
+      width: 60%;
+      height: 100%;
+      background-image: url(https://images.unsplash.com/photo-1604079628040-94301bb21b91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80);
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .reg{
+
+      width: 60%;
+      height: 90%;
+      background-color: #fff;
+      margin: 0 5vw;
+      padding: 0 3vw;
+
+    }
+    .reg h1{
+      padding: 0 2vw;
+      font-family: "Aeonik Pro";
+
+    }
+    </style>
+  </head>
+  <body>
+    <div style="width: 100%; height:100vh;" class="d-flex" class="container">
+     <div class="left">
+      <h1>Login Here</h1>
+      <form action="/login" method="post">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Username</label>
+          <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+        <hr>
+      </form>
+     </div>
+     <div class="right">
+      <div class="reg">
+        <h1>Register please</h1>
+        <hr>
+        <form action="/register" method="post">
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Full Name</label>
+            <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Username</label>
+            <input name="username" type="text" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Email</label>
+            <input name="email" type="email" class="form-control" id="exampleInputPassword1">
+          </div>
+          <select name="isSeller" class="form-select" aria-label="Default select example">
+            <option selected>Are You a Seller ?</option>
+            <option value="true">Seller</option>
+            <option value="false">Normal User</option>
+          </select>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Contact Number</label>
+            <input name="contactnumber" type="number" class="form-control" id="exampleInputPassword1">
+          </div>
+
+          <button style="margin: 0 8vw;" type="submit" class="btn btn-primary">Register As a New User</button>
+        </form>
+      </div>
+     </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+
+<%- include('../partials/header'); -%>
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+    #photo{
+
+        width: 100px;
+        height: 100px;
+        /* background-color:red; */
+        border-radius: 10px;
+        border:  2px solid #f3f3f3;
+        overflow: hidden;
+        
+        margin-left: 50px;
+    }
+    #photo img{
+
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    
+            }
+</style>
+</head>
+<body>
+<div class="mt-3" class="d-flex " class="container">
+    <h1 class="px-5">All Products.</h1>
+    <hr>
+       <!-- changes    -->
+       <div class="d-flex mt-3 ms-3" style="gap: 20px;">
+        <% allproducts.forEach(function(prod){ %>
+          <div class="card" style="width: 15rem;">
+            <img style="width: 12rem;"  class="card-img-top embed-responsive-item" src="/images/uploads/productimages/<%=prod.pic[0] %>"alt="...">
+            <a class="mt-3" style="color: red;" href=""><i class="bi bi-heart-fill"></i></a>
+             <div class="card-body">
+              <!-- for wishlist feature  -->
+              <% if (loggedinuser.whislist.indexOf(prod._id)===-1) { %>
+                <a id="wish" href="/whislist/product/<%=prod.id%>"><i class="ri-heart-fill"></i>
+                    Add to whislist</a>
+                <% } else{ %>
+                    <a id="wish" href="/whislist/product/<%=prod.id%>"><i class="ri-heart-fill"
+                            style="color: red;"></i>
+                        Remove from wishlist</a>
+                    <% } %>
+                     <!-- for wishlist feature  end -->
+            <h5 class="card-title"><%=prod.name %></h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <% if(loggedinuser.products.indexOf(prod.id) !== -1 ){ %>
+                <small class="text-danger fs-6 fw-semibold">You can sell them </small>
+                <br>
+                <br>
+                <a href="#" class="btn btn-warning">edit</a>
+                <a href="/delete/product/<%=prod.id%>" class="btn btn-primary">Delete</a>
+           <% }else{ %>
+            <a href="#" class="btn btn-info">Buy Now</a>
+            <% } %>           
+            </div>
+          </div>
+      <% }) %>
+    </div>
+       <!-- changes    -->
+
+       <%- include('../partials/footer'); -%>

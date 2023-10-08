@@ -1,0 +1,33 @@
+<%- include('../partials/header'); -%>
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+<div class="head">
+    <h2 class="m-3 ">Your wishlisted products</h2>
+    <hr>
+</div>
+<div style="gap: 25px; margin-left: 40px;" class="d-flex mt-4">
+    <!-- changes    -->
+    <% product.reverse().forEach(function(elem){ %>
+        <% if (user.whislist.indexOf(elem._id)!==-1) { %>
+            <div class="card" style="width: 18rem;">
+                <a id="wish" href="/whislist/product/<%=elem.id %>"><i class="ri-heart-fill"
+                        style="color: red;"></i>
+                    Remove from wishlist</a>
+                <div class="card-body">
+                    <img style="min-height: 15vw;" class="card-img-top embed-responsive-item"
+                        src="../images/uploads/productimages/<%=elem.pic[0]%>" alt="">
+                    <h5 class="card-title mt-3">
+                        <%= elem.name %>
+                    </h5>
+                    <h6 style="font-weight: 500; font-size: 1rem;">seller - <%=elem.sellerid.name%>
+                    </h6>
+                    <p class="card-text">
+                        <%=elem.desc%>
+                    </p>
+                </div>
+            </div>
+         <% } %>
+
+    <% }) %>
+</div>
+
+<%- include('../partials/footer'); -%>
